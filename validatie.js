@@ -51,4 +51,46 @@ function validateForm() {
       alert(errorMessage);
       return false;
     }
-}  
+
+
+    let betaling = document.getElementById("betaling").value;
+    let postcode = document.getElementById("postcode").value;
+    let voorwaarden = document.getElementById("voorwaarden").checked;
+    
+    // Controleer of een betalingswijze is geselecteerd en voeg indien nodig een foutmelding toe aan de array errors
+    if (betaling === "") {
+      errors.push("Selecteer a.u.b. een betalingswijze.");
+    } else {
+      showAlert("blauw", betaling);
+    }
+    
+    // Controleer of de postcode is ingevuld en of deze binnen het juiste bereik valt, en voeg indien nodig een foutmelding toe aan de array errors
+    if (postcode === "") {
+      errors.push("Het veld postcode is vereist.");
+    } else if (postcode < 1000 || postcode >= 10000) {
+      errors.push("De waarde van postcode moet tussen 1000 en 9999 liggen.");
+    }
+    
+    // Controleer of de algemene voorwaarden zijn aangevinkt en voeg indien nodig een foutmelding toe aan de array errors
+    if (!voorwaarden) {
+      errors.push("U moet akkoord gaan met de algemene voorwaarden.");
+    }
+    
+    // Als er foutmeldingen zijn, toon ze dan aan de gebruiker en stop met het indienen van het formulier
+    if (errors.length > 0) {
+      showAlert("rood", errors.join("\n"));
+      return false;
+    }
+    
+    // Als er geen foutmeldingen zijn, toon dan de groene en blauwe alert samen en stuur het formulier in
+    showAlert("groen", "Bedankt voor uw bestelling! We hebben uw betaling via " + betaling + " ontvangen.");
+    return true;
+  }
+  
+  // Hulpprogramma om een ​​alert te tonen met een bepaalde kleur en tekst
+  function showAlert(kleur, tekst) {
+    let alertBox = document.getElementById("alert-box");
+    alertBox.innerHTML = tekst;
+    alertBox.style.backgroundColor = kleur;
+  }
+  
