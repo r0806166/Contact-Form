@@ -14,39 +14,39 @@
       </div>
       
       <h2>Meld je aan bij Anaroc Services, wij beschermen jouw software tegen malware!</h2>
-      <form class="row g-3">
+      <form class="row g-3" onsubmit="return validateForm()">
         <div class="col-md-6">
           <label for="voornaam" class="form-label">Voornaam</label>
-          <input type="text" class="form-control" id="voornaam" placeholder="Uw Voornaam" required>
+          <input type="text" class="form-control" id="voornaam" name="voornaam" placeholder="Uw Voornaam" required>
         </div>
         <div class="col-md-6">
           <label for="naam" class="form-label">Naam</label>
-          <input type="text" class="form-control" id="naam" placeholder="Uw naam" required>
+          <input type="text" class="form-control" id="naam" name="naam" placeholder="Uw naam" required>
         </div>
         <div class="col-md-6">
           <label for="gebruikersnaam" class="form-label">Gebruikersnaam</label>
-          <input type="text" class="form-control" id="gebruikersnaam" placeholder="&#x40;u159623" required>
+          <input type="text" class="form-control" id="gebruikersnaam" name="gebruikersnaam" placeholder="&#x40;u159623" required>
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">E-mailadres</label>
-          <input type="email" class="form-control" id="email" placeholder="mail@example.be" required>
+          <input type="email" class="form-control" id="email" name="email" placeholder="mail@example.be" required>
         </div>
         <div class="col-md-6">
           <label for="wachtwoord" class="form-label">Wachtwoord</label>
-          <input type="password" class="form-control" id="wachtwoord" minlength="8" required>
+          <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" minlength="8" required>
         </div>
  
         <div class="col-md-6">
           <label for="herhaalwachtwoord" class="form-label">Herhaal wachtwoord</label>
-          <input type="password" class="form-control" id="herhaalwachtwoord" minlength="8" required>
+          <input type="password" class="form-control" id="herhaalwachtwoord" name="herhaalwachtwoord" minlength="8" required>
         </div>
-        <div class="col-mid-12">Je wachtwoord moet minstens 8 tekens lang zijn</div>
+        <div class="col-md-12">Je wachtwoord moet minstens 8 tekens lang zijn</div>
         <div class="col-md-12">
           <label for="adres" class="form-label">Adres</label>
-          <input type="text" class="form-control" id="adres" required>
+          <input type="text" class="form-control" name="adres" id="adres" required>
         </div>
        
-        <form class="dropdown-group">
+        <div class=" row g-3">
           <select class="col-md-5" id="land" size="1">
             <option value="" selected="selected">-- Kies een land --</option>
           </select>
@@ -57,7 +57,7 @@
           <select class="col-md-2" id="postcode" size="1">
             <option value="" selected="selected"></option>
           </select>
-          </form>
+        </div>
 
         <br>
         <hr>
@@ -66,44 +66,45 @@
           <div class="col-md-6 ">
             <h1>Hou me op de hoogte</h1>
             <div class="form check container d-flex justify-content-center">
-              <input class="form-check-input" type="checkbox" id="nieuwsbrief">
+              <input class="form-check-input border border-dark" type="checkbox" id="nieuwsbrief">
               <label class="form-check-label" for="">Inschrijven voor onze nieuwsbrief</label>
             </div>
             <div class="form check container d-flex justify-content-center">
-              <input class="form-check-input" type="checkbox" id="voorwaarden">
+              <input class="form-check-input border border-dark" type="checkbox" id="voorwaarden" required>
               <label class="form-check-label" for="">Ik ga akkoord met de algemene voorwaarden.</label>
             </div>
-        </div>
+        </div required>
           <div class="col-md-6 ">
             <h1>Betaling</h1>
-            <div class="form-check container d-flex justify-content-center">
-              <input class="form-check-input" type="radio" name="betalingradio" id="bankingapp" value="option1">
+            <div class="form-check container d-flex justify-content-center ">
+              <input class="form-check-input border border-dark" type="radio" name="betalingradio" id="bankingapp" value="option1">
               <label class="form-check-label" for="bankingapp">Banking app</label>
           </div>
           <div class="form-check container d-flex justify-content-center">
-              <input class="form-check-input" type="radio" name="betalingradio" id="overschrijving" value="option2">
+              <input class="form-check-input border border-dark" type="radio" name="betalingradio" id="overschrijving" value="option2">
               <label class="form-check-label" for="overschrijving">Overschrijving.</label>
           </div>
           <div class="form-check container d-flex justify-content-center">
-              <input class="form-check-input" type="radio" name="betalingradio" id="visacard" value="option3">
+              <input class="form-check-input border border-dark" type="radio" name="betalingradio" id="visacard" value="option3">
               <label class="form-check-label" for="visacard">Visa card</label>
           </div>
           <div class="form-check container d-flex justify-content-center">
-              <input class="form-check-input " type="radio" name="betalingradio" id="paypal" value="option4">
+              <input class="form-check-input border border-dark " type="radio" name="betalingradio" id="paypal" value="option4">
               <label class="form-check-label" for="paypal">Paypal</label>
           </div>
         </div>  
         </div>
         <hr>
         <br>
-        
-        
+        <div class="col-md-12 form-group"> <button type="submit" onclick="return validateForm()" id="submit" class="btn btn-primary btn-block">Wave your magic wand</button></div>
+
        </form>
-       <div class="col-md-12 form-group"> <button class="btn btn-primary btn-block">Wave your magic wand</button></div>
+       
        <br>
        
     </div>
     <script src="landen.js"></script>
+    <script src="validatie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>
