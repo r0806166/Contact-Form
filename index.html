@@ -9,7 +9,10 @@
   </head>
   <body>
     <div class="container  border border-dark">
-      <h1 class="container mt-5"><h1>Registreer</h1></h1>
+      <div>
+        <h1 class="registreer">Registreer</h1>
+      </div>
+      
       <h2>Meld je aan bij Anaroc Services, wij beschermen jouw software tegen malware!</h2>
       <form class="row g-3">
         <div class="col-md-6">
@@ -22,7 +25,7 @@
         </div>
         <div class="col-md-6">
           <label for="gebruikersnaam" class="form-label">Gebruikersnaam</label>
-          <input type="text" class="form-control" id="gebruikersnaam" placeholder="u159623" required>
+          <input type="text" class="form-control" id="gebruikersnaam" placeholder="&#x40;u159623" required>
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">E-mailadres</label>
@@ -30,12 +33,12 @@
         </div>
         <div class="col-md-6">
           <label for="wachtwoord" class="form-label">Wachtwoord</label>
-          <input type="password" class="form-control" id="wachtwoord" required>
+          <input type="password" class="form-control" id="wachtwoord" minlength="8" required>
         </div>
  
         <div class="col-md-6">
           <label for="herhaalwachtwoord" class="form-label">Herhaal wachtwoord</label>
-          <input type="password" class="form-control" id="herhaalwachtwoord" required>
+          <input type="password" class="form-control" id="herhaalwachtwoord" minlength="8" required>
         </div>
         <div class="col-mid-12">Je wachtwoord moet minstens 8 tekens lang zijn</div>
         <div class="col-md-12">
@@ -45,14 +48,14 @@
        
         <form class="dropdown-group">
           <select class="col-md-5" id="land" size="1">
-            <option value="" selected="selected">--Kies een land--</option>
+            <option value="" selected="selected">-- Kies een land --</option>
           </select>
           
           <select class="col-md-5" id="provincie" size="1">
-            <option value="" selected="selected">--Kies een provincie--</option>
+            <option value="" selected="selected">-- Kies een provincie --</option>
           </select>
           <select class="col-md-2" id="postcode" size="1">
-            <option value="" selected="selected">--Postcode</option>
+            <option value="" selected="selected"></option>
           </select>
           </form>
 
@@ -93,9 +96,11 @@
         </div>
         <hr>
         <br>
-        <div class="col-md-12 form-group"> <button class="btn btn-primary">Wave your magic wand</button></div>
+        
         
        </form>
+       <div class="col-md-12 form-group"> <button class="btn btn-primary btn-block">Wave your magic wand</button></div>
+       <br>
        
     </div>
     <script src="landen.js"></script>
